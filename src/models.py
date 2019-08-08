@@ -61,6 +61,16 @@ class Likes (Base):
     commentId = Column(Integer, ForeignKey('comments.commentId'))
 
 
+class Conversations (Base):
+    __tablename__ = 'conversations'
+    # Here we define columns for the table person
+    # Notice that each column is also a normal Python instance attribute.
+    messageId = Column(Integer, primary_key=True)
+    conversationId = Column(Integer)
+    userId = Column(Integer, ForeignKey('users.userId'))
+    theMessageContent = Column(String(500))
+
+
     #def to_dict(self):
     #    return {}
 
